@@ -34,7 +34,7 @@ r = requests.post(url = JAKIM_API, data = data)
 pastebin_url = r.text
 solatinfo_dict = json.loads(pastebin_url)
 
-waktuBM = {"imsak":"Imsak","fajr":"Subuh","syuruk":"Shuruk","dhuhr":"Zohor","asr":"Asar","maghrib":"Maghrib","isha":"Isyak"}
+waktuBM = {"imsak":"Imsak","fajr":"Subuh","syuruk":"Syuruk","dhuhr":"Zohor","asr":"Asar","maghrib":"Maghrib","isha":"Isyak"}
 
 def printPrayerTimes(waktu='all'):
     if (waktu=='all'):
