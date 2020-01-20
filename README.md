@@ -50,7 +50,7 @@ Of course i can view the prayer times from JAKIM website, but I went to all the 
 Contributers are definitely welcome. I would expect that this application should provide the same functionality as in the JAKIM web, with probably better or more options. Currently, it is just enough for me to use in my conky app. Other things that I am considering are:
 
 * using proper class methods and abstraction for long term maintenance
-* suppose for different input options
+* suppose for different input options like different locations and zones in Malaysia, weekly output, monthly and etc
 * visualizations output and layout
 * audio support and cron integration to play azan
 * reminder notification messages to window manager for next prayer time
