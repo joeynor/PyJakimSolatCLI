@@ -24,6 +24,19 @@ Also you may need to install the requests python library. For this you can use
 pip install requests
 ```
 
+Once you have the correct libraries, you get set the script sikatJakim.py to an executable and move it somewhere /usr/bin/ to some other name that you woudl like.
+
+```
+chmod 755 solatJakim.py
+mv solatJakim.py /usr/bin/solatJakim
+```
+to run it
+
+```
+solatJakim -h 
+```
+to see the options that it can take. Common args are imsak, fajr, shuruk, dhuhur, asr, maghrib and isha.
+
 # Availability
 
 Because it depends on JAKIM web api, i cannot give guarantee that this code will work forever, it will primarility dependent on JAKIM good will to keep it open to be used by public. I assume they give let you use it for free, cause their website does the same thing so openly.
