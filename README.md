@@ -10,6 +10,19 @@ BSD license for now, so you can definitely copy and modify in anyway you want.
 But if you can please keep the note above about JAKIM and the thank you note.
 And if you are really awesome, include me as one of the original writers. 
 
+# Installation
+
+This is a very simple script.
+You may need some things installed, particularly python.
+```
+apt-get install python pip
+```
+should do the trick
+
+Also you may need to install the requests python library. For this you can use
+```
+pip install requests
+```
 
 # Availability
 
