@@ -35,7 +35,7 @@ to run it
 ```
 solatJakim -h 
 ```
-to see the options that it can take. Common args are imsak, fajr, shuruk, dhuhur, asr, maghrib and isha.
+to see the options that it can take. Common args are imsak, fajr, syuruk, dhuhr, asr, maghrib and isha.
 
 # Availability
 
