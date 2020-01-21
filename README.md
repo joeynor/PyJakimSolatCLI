@@ -58,12 +58,10 @@ Contributers are definitely welcome. I would expect that this application should
 
 * using proper class methods and abstraction for long term maintenance
 * suppose for different input options like different locations and zones in Malaysia, weekly output, monthly and etc
-* visualizations output and layout
-* audio support and cron integration to play azan
-* reminder notification messages to window manager for next prayer time
-* visualization for next prayer
-* lua graphical support integration, to be used in conky
-
+* audio support to run mp3/ogg. 
+* reminder notification messages to window manager when enters time, possibly can be done with notify-send
+* visualization for next prayer, simple GUI on lua, not sure how to do this yet. either a hook to lua graphical support integration, to be used in conky
+* systemtray integration 
 
 # Donation
 If you're really generous you can obviously contribute, send me a message and ill share you my crypto address

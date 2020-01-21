@@ -6,24 +6,6 @@ import datetime
 import sys, getopt
 
 default_zone = 'SGR01'
-# defining the api-endpoint  
-JAKIM_API = "https://www.e-solat.gov.my/index.php?r=esolatApi/takwimsolat&period=duration&zone="+default_zone
-
-
-#setting the date for POST data
-datenow= datetime.datetime.now()
-datestart = datenow.strftime("%Y-%m-%d")
-dateend = datestart
-data = {'datestart':datestart, 
-        'dateend':dateend}
-
-  
-# sending post request and saving response as response object 
-r = requests.post(url = JAKIM_API, data = data) 
-  
-# extracting response text  
-pastebin_url = r.text
-solatinfo_dict = json.loads(pastebin_url)
 
 waktuBM = {"imsak":"Imsak","fajr":"Subuh","syuruk":"Syuruk","dhuhr":"Zohor","asr":"Asar","maghrib":"Maghrib","isha":"Isyak"}
 zones = {
@@ -87,13 +69,33 @@ zones = {
 }
 
 def setDefaultZone(zone):
+    global default_zone
     default_zone = zone
 
-def printZone(zone):
-    setDefaultZone(zone)
-    print(zones[default_zone])
+def printZone():
+    for zone in zones:
+        print(zones[zone])
     
 def printPrayerTimes(waktu='all'):
+    # defining the api-endpoint  
+    JAKIM_API = "https://www.e-solat.gov.my/index.php?r=esolatApi/takwimsolat&period=duration&zone="+default_zone
+
+
+    #setting the date for POST data
+    datenow= datetime.datetime.now()
+    datestart = datenow.strftime("%Y-%m-%d")
+    dateend = datestart
+    data = {'datestart':datestart, 
+            'dateend':dateend}
+
+  
+    # sending post request and saving response as response object 
+    r = requests.post(url = JAKIM_API, data = data) 
+  
+    # extracting response text  
+    pastebin_url = r.text
+    solatinfo_dict = json.loads(pastebin_url)
+    
     if (waktu=='all'):
         print("Bagi Tahun " + solatinfo_dict['prayerTime'][0]['hijri'] + '. Waktu solat bagi kawasan:')
         print(zones[default_zone]) 
@@ -110,36 +112,50 @@ def printPrayerTimes(waktu='all'):
         print(waktuBM[waktu]+" : " + solatinfo_dict['prayerTime'][0][waktu])
         
 def main(argv):
-    waktu = 'all';
+    global waktu,default_zone
+    waktu='all'
     try:
         opts, args = getopt.getopt(argv,"hwdz",["waktu="])
     except getopt.GetoptError:
-        print 'solatJakim -w <waktusolat>'
-        sys.exit(2)
+        print('Needs args for correct usage refer to: solatJakim -h')
+        exit(2)
+    if len(opts)==0:
+        setDefaultZone('SGR01')
+        printPrayerTimes();
+        exit(2)
     for opt, arg in opts:
         if opt == '-h':
-            print 'solatJakim -w <imsak|fajr|syuruk|dhuhr|maghrib|isha> -z zone'
-            print 'supported zones are : ' +str(zones)
-            sys.exit()
+            print('solatJakim -w <all|imsak|fajr|syuruk|dhuhr|maghrib|isha> -z [default_zone=SGR01]')
+            print('solatJakim -w <all|imsak|fajr|syuruk|dhuhr|maghrib|isha>')
+            print('solatJakim [default waktu=all,default_zone=SGR01]')
+            print('\n')
+            print('Supported zones are : ')
+            printZone();
+            sys.exit(2)
         elif opt in ("-w", "--waktu"):
+            waktu = args[0]
             if len(args)<=1:
-                waktu = args[0]
                 printPrayerTimes(waktu)
-                exit
+                exit(2)
             else:
                 if args[1] == '-z':
-                    if args[2] not in zones:
-                        print ("Invalid Zones, valid zones with -z are :" +str(zones))
-                    else:
-                        setDefaultZone(args[2])
-                        printPrayerTimes(waktu)
-                        exit
+                    try:
+                        if args[2] not in zones:
+                            print("Invalid Zones, valid zones with -z are : \n" )
+                            printZone()
+                        else:
+                            setDefaultZone(args[2])
+                            printPrayerTimes(waktu)
+                    except:
+                        print("Missing zone identifier, valid zones are : \n" )
+                        printZone()
         elif opt in ("-d", "--islamicDate"):
             printPrayerTimes('hijri')
-            exit
+            exit(2)
         elif opt in ("-z", "--zones"):
-            printZone(args[0])
-            exit
+            setDefaultZone(args[0])
+            printPrayerTimes('all')
+            exit(2)
 if __name__== "__main__":
     main(sys.argv[1:])
 
