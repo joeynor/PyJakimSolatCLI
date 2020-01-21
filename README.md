@@ -57,7 +57,7 @@ Of course i can view the prayer times from JAKIM website or using this awesome o
 Contributers are definitely welcome. I envision that this script should provide the same functionality as in the JAKIM web, with probably better or more options. Currently, it is just enough for me to use in my conky app. Other things that I am considering are:
 
 * using proper class methods and abstraction for long term maintenance
-* support for different input options like different locations and zones in Malaysia, weekly output, monthly and etc
+* support for different input options like different locations and zones in Malaysia, weekly output, monthly and etc and provide various options for output
 * audio support to run mp3/ogg. 
 * reminder notification messages to window manager when enters time, possibly can be done with notify-send
 * visualization for next prayer, simple GUI on lua, not sure how to do this yet. either a hook to lua graphical support integration, to be used in conky
