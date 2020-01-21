@@ -4,14 +4,6 @@ import requests
 import json
 import datetime
 import sys, getopt
-"""
-
-Still working on this code
-example usage for now
-printPrayerTimes()
-print ('\n\n')
-printPrayerTimes('asr')
-"""
 
 default_zone = 'SGR01'
 # defining the api-endpoint  
