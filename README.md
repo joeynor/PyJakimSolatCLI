@@ -1,6 +1,6 @@
 # Introduction
 
-_PyJakimSolatCLI_ intends to be a CLI driven application to be used on posix shell environments. The application itself is an interface to the JAKIM's official WEBSITE web API in getting solat prayer times for local malaysian zones and states. Hence, it will not be useful for those living outside of Malaysia. The reason why it was localized to JAKIM is to assure the timing is correct as published by JAKIM. There are manual calculation methods such as the one publish by islamicfinder, or other muslim websites, but, there are sometimes different than the ones publish by JAKIM. This is due to the many other parameters that are not taken into consideration during calculating the prayer times. Trying to get the exact methods used by JAKIM seems impossible for now, so I decided to just use their current API, used by their own website.
+_PyJakimSolatCLI_ intends to be a CLI driven application to be used on posix shell environments. The application itself is an interface to the JAKIM's official WEBSITE web API in getting solat prayer times for local malaysian zones and states. Hence, it will not be useful for those living outside of Malaysia. The reason why it was localized to JAKIM is to assure the timing used in Malaysia is correct as published by JAKIM. There are manual calculation methods such as the one publish by islamicfinder, or other muslim websites, but, there are sometimes different than the ones publish by JAKIM. This is due to the many other parameters that are not taken into consideration during calculating the prayer times. Trying to get the exact methods used by JAKIM seems impossible for now, so I decided to just use their current API, used by their own website.
 
 Thank You JAKIM for their generosity for providing web api.
 
@@ -46,7 +46,7 @@ for example, handles for zone 3 in Selangor
 
 # Availability
 
-Because it depends on JAKIM web api, i cannot give guarantee that this code will work forever, it will primarility dependent on JAKIM good will to keep it open to be used by public. I assume they give let you use it for free, cause their website does the same thing so openly.
+Because it depends on JAKIM web api, i cannot give guarantee that this code will work forever, it will primarily dependent on JAKIM good will to keep it open to be used by public. I assume they give let you use it for free, cause their website does the same thing so openly.
 
 # Why bother
 
