@@ -50,7 +50,7 @@ Because it depends on JAKIM web api, i cannot give guarantee that this code will
 
 # Why bother
 
-Of course i can view the prayer times from JAKIM website or even a oneliner bash script from [sharruzzaman](https://gist.github.com/sharuzzaman/9da402680df7f107dafb96d403e0f95a), but I went to all the trouble writing a python code to get it from JAKIM. This is because, I like CLI, and I spend a considerable amount of time on CLI. Furthermore, the CLI allows me to tie it to other applications like Conky. Allowing me to code different format of output and integration not otherwise possible. 
+Of course i can view the prayer times from JAKIM website or using this awesome oneliner bash script from [sharruzzaman](https://gist.github.com/sharuzzaman/9da402680df7f107dafb96d403e0f95a), but I went to all the trouble writing a python code to get it from JAKIM. This is because, I like CLI, and I spend a considerable amount of time on CLI. More importantly, the CLI allows me to tie it to other python scripts, API and conky. Allowing me to code different format of output and integration not otherwise possible. 
 
 # Contributions for Improvements
 
