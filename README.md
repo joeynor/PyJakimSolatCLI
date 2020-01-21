@@ -28,7 +28,7 @@ Once you have the correct libraries, you get set the script solatJakim.py to an 
 
 ```
 chmod 755 solatJakim.py
-mv solatJakim.py /usr/bin/solatJakim
+sudo cp solatJakim.py /usr/bin/solatJakim
 ```
 to run it
 
@@ -36,6 +36,13 @@ to run it
 solatJakim -h 
 ```
 to see the options that it can take. Common args are imsak, fajr, syuruk, dhuhr, asr, maghrib and isha.
+
+It can also support zones.
+
+```
+solatJakim -w asr -z SGR03
+```
+for example, handles for zone 3 in Selangor
 
 # Availability
 
