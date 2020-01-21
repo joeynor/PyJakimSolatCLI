@@ -24,7 +24,7 @@ Also you may need to install the requests python library. For this you can use
 pip install requests
 ```
 
-Once you have the correct libraries, you get set the script solatJakim.py to an executable and move it somewhere /usr/bin/ to some other name that you woudl like.
+Once you have the correct libraries, you get set the script solatJakim.py to an executable and move it somewhere /usr/bin/ to some other name that you would like.
 
 ```
 chmod 755 solatJakim.py
