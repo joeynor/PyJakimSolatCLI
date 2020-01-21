@@ -50,14 +50,14 @@ Because it depends on JAKIM web api, i cannot give guarantee that this code will
 
 # Why bother
 
-Of course i can view the prayer times from JAKIM website, but I went to all the troube writing a python code to get it from JAKIM. This is because, I like CLI, and I spend a lot of time on CLI. Furthermore, the CLI allows me to tie it to other applications like Conky. Allowing me to get prayer times daily as it changes.
+Of course i can view the prayer times from JAKIM website or even a oneliner bash script from [sharruzzaman](https://gist.github.com/sharuzzaman/9da402680df7f107dafb96d403e0f95a), but I went to all the trouble writing a python code to get it from JAKIM. This is because, I like CLI, and I spend a considerable amount of time on CLI. Furthermore, the CLI allows me to tie it to other applications like Conky. Allowing me to code different format of output and integration not otherwise possible. 
 
-# Improvements
+# Contributions for Improvements
 
-Contributers are definitely welcome. I would expect that this application should provide the same functionality as in the JAKIM web, with probably better or more options. Currently, it is just enough for me to use in my conky app. Other things that I am considering are:
+Contributers are definitely welcome. I envision that this script should provide the same functionality as in the JAKIM web, with probably better or more options. Currently, it is just enough for me to use in my conky app. Other things that I am considering are:
 
 * using proper class methods and abstraction for long term maintenance
-* suppose for different input options like different locations and zones in Malaysia, weekly output, monthly and etc
+* support for different input options like different locations and zones in Malaysia, weekly output, monthly and etc
 * audio support to run mp3/ogg. 
 * reminder notification messages to window manager when enters time, possibly can be done with notify-send
 * visualization for next prayer, simple GUI on lua, not sure how to do this yet. either a hook to lua graphical support integration, to be used in conky
