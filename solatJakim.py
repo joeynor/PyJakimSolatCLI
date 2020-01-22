@@ -115,7 +115,7 @@ def main(argv):
     global waktu,default_zone
     waktu='all'
     try:
-        opts, args = getopt.getopt(argv,"hwdz",["waktu="])
+        opts, args = getopt.getopt(argv,"hwdzk",["waktu="])
     except getopt.GetoptError:
         print('Needs args for correct usage refer to: solatJakim -h')
         exit(2)
@@ -154,8 +154,9 @@ def main(argv):
             exit(2)
         elif opt in ("-z", "--zones"):
             setDefaultZone(args[0])
-            printPrayerTimes('all')
+            print(zones[default_zone])
             exit(2)
+
 if __name__== "__main__":
     main(sys.argv[1:])
 
