@@ -4,6 +4,8 @@ import requests
 import json
 import datetime
 import sys, getopt
+from prettytable import PrettyTable
+
 
 default_zone = 'SGR01'
 
@@ -97,15 +99,19 @@ def printPrayerTimes(waktu='all'):
     solatinfo_dict = json.loads(pastebin_url)
     
     if (waktu=='all'):
+        # Print the waktu solat in a pretty table . Jeffry Johar 1/23/2019
+        pt = PrettyTable()
+        pt.field_names = ["Solat", "Waktu"]
         print("Bagi Tahun " + solatinfo_dict['prayerTime'][0]['hijri'] + '. Waktu solat bagi kawasan:')
         print(zones[default_zone]) 
-        print(waktuBM['imsak']+" : " + solatinfo_dict['prayerTime'][0]['imsak'])
-        print(waktuBM['fajr']+" : " + solatinfo_dict['prayerTime'][0]['fajr'])
-        print(waktuBM['syuruk']+" : " + solatinfo_dict['prayerTime'][0]['syuruk'])
-        print(waktuBM['dhuhr']+" : " + solatinfo_dict['prayerTime'][0]['dhuhr'])
-        print(waktuBM['asr']+" : " + solatinfo_dict['prayerTime'][0]['asr'])
-        print(waktuBM['maghrib']+" : " + solatinfo_dict['prayerTime'][0]['maghrib'])
-        print(waktuBM['isha']+" : " + solatinfo_dict['prayerTime'][0]['isha'])      
+        pt.add_row([waktuBM['imsak'],solatinfo_dict['prayerTime'][0]['imsak']])
+        pt.add_row([waktuBM['fajr'],solatinfo_dict['prayerTime'][0]['fajr']])
+        pt.add_row([waktuBM['syuruk'],solatinfo_dict['prayerTime'][0]['syuruk']])
+        pt.add_row([waktuBM['dhuhr'],solatinfo_dict['prayerTime'][0]['dhuhr']])
+        pt.add_row([waktuBM['asr'],solatinfo_dict['prayerTime'][0]['asr']])
+        pt.add_row([waktuBM['maghrib'],solatinfo_dict['prayerTime'][0]['maghrib']])
+        pt.add_row([waktuBM['isha'],solatinfo_dict['prayerTime'][0]['isha']])
+        print(pt)
     elif waktu == 'hijri':
         print("Tahun Islam " + solatinfo_dict['prayerTime'][0]['hijri'])
     else:
